@@ -1,7 +1,8 @@
 import Contacts from "./Contacts/contacts";
-import Help from "./Help/help";
 import Info from "./Info/Info";
-import Results from "./Results/results";
 import Error404 from "./Error404/Error404";
+import Home from "./Home/Home"
+import Login from "./Login/Login";
+import Registr from "./Registr/Registr";
 
-export { Contacts, Help, Info, Results, Error404 };
+export { Contacts, Info, Error404, Home, Login, Registr };
