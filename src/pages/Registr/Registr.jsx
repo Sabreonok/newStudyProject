@@ -8,8 +8,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const auth = getAuth();
-const navigate = useNavigate()
+
+
 
 
 function validPass(){
@@ -18,6 +18,8 @@ function validPass(){
 
 
 async function createUser(event){
+  
+  const auth = getAuth();
     event.preventDefault()
     if(!validPass()) {
         setErrCopyPass(true) 
@@ -38,7 +40,7 @@ async function createUser(event){
 
 export default function Registr() {
 
-
+  const navigate = useNavigate()
 
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -53,14 +55,14 @@ export default function Registr() {
     <div className="form-inner">
       <h3>Регистрация</h3>
       <label htmlFor="username">Имя пользователя</label>
-      <input type="text" id="username" value={userName} required autoComplete='off' onChange={()=>setUserName(e.target.value)}/>
+      <input type="text" id="username" value={userName} required autoComplete='off' onChange={(e)=>setUserName(e.targete.value)}/>
       <label htmlFor="email">Электронная почта</label>
-      <input type="text" id="email" value={email} required autoComplete='off' onChange={()=>setEmail(e.target.value)}/>
+      <input type="text" id="email" value={email} required autoComplete='off' onChange={(e)=>setEmail(e.target.value)}/>
       <label htmlFor="password">Пароль</label>
-      <input id="password" type="password" value={password} required autoComplete='off' onChange={()=>setPassword(e.target.value)}/>
+      <input id="password" type="password" value={password} required autoComplete='off' onChange={(e)=>setPassword(e.target.value)}/>
       {errCopyPass && <h4 className='errText'>Пароли не совпадают</h4>}
       <label htmlFor="copyPassword">Повторите пароль</label>
-      <input id="password" type="password" value={copyPassword} required autoComplete='off' onChange={()=>setCopyPassword(e.target.value)}/>
+      <input id="password" type="password" value={copyPassword} required autoComplete='off' onChange={(e)=>setCopyPassword(e.target.value)}/>
       <input type="submit" value="Войти" />
       <Link className='reglink' to="/login" >Авторизация</Link>
     </div>

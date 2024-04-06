@@ -34,7 +34,6 @@ function App() {
           <Routes>
             <Route path='/contacts' element={<Contacts />} />
             <Route path='/info' element={<Info />} />
-            <Route path='/results' element={<Results />} />
             <Route path='/' element={<Home arr={arr} addPost={addPost} score={score}/>} />
             <Route path='/login' element={<Login />} />
             <Route path='/registr' element={<Registr />} />
